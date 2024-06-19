@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://csmxvu77imq3d"]
+
+[ext_resource type="Shader" path="res://shaders/my_water.gdshader" id="1_ndwhv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fqday"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y3k6p"]
+noise = SubResource("FastNoiseLite_fqday")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kbq3e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0e8tp"]
+noise = SubResource("FastNoiseLite_kbq3e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ew12"]
+render_priority = 0
+shader = ExtResource("1_ndwhv")
+shader_parameter/wave_height_scale = 0.35
+shader_parameter/wave_time_scale = 0.025
+shader_parameter/wave_a = SubResource("NoiseTexture2D_y3k6p")
+shader_parameter/wave_b = SubResource("NoiseTexture2D_0e8tp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s7nfk"]
+material = SubResource("ShaderMaterial_7ew12")
+size = Vector2(10, 10)
+subdivide_width = 128
+subdivide_depth = 128
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_s7nfk")
