@@ -17,11 +17,11 @@ void fragment() {
 	// Uncomment to replace the default light processing function with this one.
 //}
 
-uniform float time;
+uniform vec3 center = vec3(0.5, 0.5, 0.0);
 
 void vertex() {
     // Calculate the distance from the vertex to the center
-    vec3 center = vec3(0.5, 0.5, 0.0); // Center of the plane, assuming normalized UVs
+    //vec3 center = vec3(0.5, 0.5, 0.0); // Center of the plane, assuming normalized UVs
     vec3 vertexPosition = vec3(VERTEX);
 
     // Calculate the distance from the vertex to the center
