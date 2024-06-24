@@ -1,21 +1,9 @@
 shader_type spatial;
-//
-//void vertex() {
-	//// Called for every vertex the material is visible on.
-	//
-	//VERTEX.y = sin((sin(VERTEX.z + TIME*4.0) + sin(VERTEX.x + TIME*4.0)));
-	//
-//}
-//
+
 void fragment() {
 	// Called for every pixel the material is visible on.
 	ALBEDO = vec3(0.02, 0.45, 0.8);
 }
-
-//void light() {
-	// Called for every pixel for every light affecting the material.
-	// Uncomment to replace the default light processing function with this one.
-//}
 
 uniform vec3 center = vec3(0.5, 0.5, 0.0);
 
