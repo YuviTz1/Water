@@ -49,3 +49,4 @@ func _input(event):
 				# Now `collision_point` contains the world coordinates where the ray intersects with the plane
 				print("Collision Point:", collision_point)
 				water.mesh.material.set_shader_parameter("center", collision_point);
+				water.mesh.material.set_shader_parameter("do_ripple", true);
